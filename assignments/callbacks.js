@@ -91,7 +91,7 @@ function contains(items, list, containsCB) {
   // Pass true to the callback if it is, otherwise pass false.
 }
 
-contains(items, "Gum", containsCB);
+contains(items, "Pizza", containsCB);
 
 /* STRETCH PROBLEM */
 
