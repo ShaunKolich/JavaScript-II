@@ -42,24 +42,56 @@ let getLastCb = (lastItem) => {
 }
 
 function last(array, getLastCb) {
-  console.log(getLastCb(array[array.length - 1]));
+  // console.log(getLastCb(array[array.length - 1]));
   console.log(`Last Item Is ${getLastCb(array[array.length - 1])}`);
   // last passes the last item of the array into the callback.
 }
 last(items, getLastCb);
 
-function sumNums(x, y, cb) {
+
+let addNumCB = function (x, y) {
+  return x + y;
+
+}
+
+function sumNums(x, y, addNumCB) {
+  console.log(addNumCB(x, y));
+
   // sumNums adds two numbers (x, y) and passes the result to the callback.
 }
 
-function multiplyNums(x, y, cb) {
+sumNums(1, 3, addNumCB);
+
+let multNumCb = function (x, y) {
+  return x * y;
+}
+
+function multiplyNums(x, y, multNumCb) {
+  console.log(multNumCb(x, y));
   // multiplyNums multiplies two numbers and passes the result to the callback.
 }
 
-function contains(item, list, cb) {
+multiplyNums(1, 45, multNumCb);
+
+let containsCB = function (items, list) {
+  for (let i = 0; i < items.length; i++) {
+    if (items[i] === list) {
+      // console.log(`The item ${list} is in the array so the answer is True!`);
+      return true;
+    } else {
+      // console.log(`The item ${list} isn't in the array so the answer is false`);
+      return false;
+    }
+  }
+}
+
+function contains(items, list, containsCB) {
+  console.log(containsCB(items, list));
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
 }
+
+contains(items, "Gum", containsCB);
 
 /* STRETCH PROBLEM */
 
