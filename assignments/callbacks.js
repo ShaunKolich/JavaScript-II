@@ -75,7 +75,7 @@ multiplyNums(1, 45, multNumCb);
 
 let containsCB = function (items, list) {
   for (let i = 0; i < items.length; i++) {
-    if (items[i] === list) {
+    if (items.includes(list)) {
       // console.log(`The item ${list} is in the array so the answer is True!`);
       return true;
     } else {
@@ -91,7 +91,7 @@ function contains(items, list, containsCB) {
   // Pass true to the callback if it is, otherwise pass false.
 }
 
-contains(items, "Pizza", containsCB);
+contains(items, "Gum", containsCB);
 
 /* STRETCH PROBLEM */
 
