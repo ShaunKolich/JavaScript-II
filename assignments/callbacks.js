@@ -2,10 +2,10 @@
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
-/* 
+/*
 
-  //Given this problem: 
-  
+  //Given this problem:
+
   function firstItem(arr, cb) {
     // firstItem passes the first item of the given array to the callback function.
   }
@@ -17,34 +17,81 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
     return cb(arr[0]);
   }
 
-  // Function invocation 
+  // Function invocation
   firstItem(items, function(first) {
     console.log(first)
   });
 
 */
-
-
-function getLength(arr, cb) {
+function getLength(array, getLengthCb) {
+  console.log(getLengthCb(array));
+  // console.log(`The length of array is ${results}`);
   // getLength passes the length of the array into the callback.
 }
 
-function last(arr, cb) {
-  // last passes the last item of the array into the callback.
+let getLengthCb = (array) => {
+  return array.length;
+}
+// console.log(results);
+
+// getLength(items, getLengthCb);
+
+let getLastCb = (lastItem) => {
+  // array.length - 1;
+  return lastItem;
 }
 
-function sumNums(x, y, cb) {
+function last(array, getLastCb) {
+  // console.log(getLastCb(array[array.length - 1]));
+  console.log(`Last Item Is ${getLastCb(array[array.length - 1])}`);
+  // last passes the last item of the array into the callback.
+}
+last(items, getLastCb);
+
+
+let addNumCB = function (x, y) {
+  return x + y;
+
+}
+
+function sumNums(x, y, addNumCB) {
+  console.log(addNumCB(x, y));
+
   // sumNums adds two numbers (x, y) and passes the result to the callback.
 }
 
-function multiplyNums(x, y, cb) {
+sumNums(1, 3, addNumCB);
+
+let multNumCb = function (x, y) {
+  return x * y;
+}
+
+function multiplyNums(x, y, multNumCb) {
+  console.log(multNumCb(x, y));
   // multiplyNums multiplies two numbers and passes the result to the callback.
 }
 
-function contains(item, list, cb) {
+multiplyNums(1, 45, multNumCb);
+
+let containsCB = function (items, list) {
+  for (let i = 0; i < items.length; i++) {
+    if (items.includes(list)) {
+      // console.log(`The item ${list} is in the array so the answer is True!`);
+      return true;
+    } else {
+      // console.log(`The item ${list} isn't in the array so the answer is false`);
+      return false;
+    }
+  }
+}
+
+function contains(items, list, containsCB) {
+  console.log(containsCB(items, list));
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
 }
+
+contains(items, "Gum", containsCB);
 
 /* STRETCH PROBLEM */
 

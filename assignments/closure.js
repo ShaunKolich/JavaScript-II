@@ -1,5 +1,15 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function greeting() {
+  let statement = "I am creating a Employment Program";
+      function name(first) {
+  return `My name is ${first} ${statement}!`;
+}
+return name;
+}
+
+let sayHello = greeting();
+console.log(sayHello("Shaun"));
 
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
